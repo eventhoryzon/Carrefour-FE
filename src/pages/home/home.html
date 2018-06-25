@@ -1,14 +1,76 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+<ion-header>
+<ion-navbar color="white">
+    <img src="assets/imgs/carrefour.svg" class="navbarLogo"/>
+  <!-- <ion-icon side="right" name="cart" color="energy"></ion-icon>   -->
+     <ion-searchbar *ngIf="isOn" [(ngModel)]="searchTerm"  [formControl]="searchControl"></ion-searchbar>
+   <ion-buttons end>
+     <button  (click)="toggleDetails()" style="width: 50px;height: 40px;border-radius: 4px;background-color: #f0f7fe"><ion-icon name="search" style=" color: #05539f" ></ion-icon></button>
+   </ion-buttons>
+   <div *ngIf="searching" class="spinner-container">
+     <ion-spinner></ion-spinner>
+ </div>
+ </ion-navbar>
+</ion-header>
+<ion-content padding id ="home">
+  <div class="login-form-container">
+    
+    
+    <form class="form" (submit)="doLogin()">
+        <p class="Signin" align="center"> Sign In Now </p>
+        <p class="unlock" align="center">Unlock awesome features!</p>
+        
+      
+     <!-- <ion-item> -->
+    <p class="username">Username</p>
+  
+    <p>
+      <input type="email" [(ngModel)]="loginData.email" name="email"  placeholder="Username"/>
+      <ion-item *ngIf="!userform.controls.email.valid  && (userform.controls.email.dirty || submitAttempt)">
+          <p>Please enter a valid User Email.</p>
+      </ion-item>
+    </p>
+        <ion-label stacked ></ion-label>
+        <p align="center">
+        <input [(ngModel)]="loginData.password" name="password" type="password" align="center" placeholder="Password"/>
+        <ion-item *ngIf="!userform.controls.password.valid  && (userform.controls.password.dirty || submitAttempt)">
+            <p>Please enter a valid Password.</p>
+        </ion-item> 
+      </p>
+
+     <button class="signin-button"  (click)="doLogin()">SIGN IN </button>
+     <div class="rememberme-container">
+       <ion-checkbox name="rememberme" id="rememberme" >
+         <label><p class="keepmelogged">Keep me Logged in?</p></label>
+      </ion-checkbox>
+       
+        <label for="rememberme">keep me logged in?</label>
+        
+        <a class="forgot-password" href="#">Forgot Password?</a>
+      </div>
+    </form>
+    </div>
+    <div class="img-with-text">
+        <img src="assets/imgs/carrefour.svg" alt="sometext" class="fix1"/>
+        <p class="fix1text"> Iphone 6 Black </p>
+        <p class="fix1text2">AED 1000</p>
+    </div>
+    <div class="img-with-text">
+        <img src="assets/imgs/carrefour.svg" alt="sometext" class="fix2"/>
+        <p class="fix2text"> Iphone 7 Black </p>
+        <p class="fix2text2">AED 2000</p>
+    </div>
+    <div class="img-with-text">
+        <img src="assets/imgs/carrefour.svg" alt="sometext" class="fix3"/>
+        <p class="fix3text"> Iphone 8 Black </p>
+        <p class="fix3text3">AED 3000</p>
+    </div>
+    </ion-content>
+   
+        
+    
+   
+    
+    
+  
+   
