@@ -17,6 +17,7 @@
     
     
     <form class="form" (submit)="doLogin()">
+      <div [formGroup]="userform">
         <p class="Signin" align="center"> Sign In Now </p>
         <p class="unlock" align="center">Unlock awesome features!</p>
         
@@ -24,19 +25,17 @@
      <!-- <ion-item> -->
     <p class="username">Username</p>
   
-    <p>
-      <input type="email" [(ngModel)]="loginData.email" name="email"  placeholder="Username"/>
-      <ion-item *ngIf="!userform.controls.email.valid  && (userform.controls.email.dirty || submitAttempt)">
-          <p>Please enter a valid User Email.</p>
-      </ion-item>
-    </p>
+    
+      <input type="email" formControlName="email" name="email"  placeholder="Username" required/>
+      <div *ngIf="!userform.controls.email.valid  && (userform.controls.email.dirty || submitAttempt)">
+          <p style="color: red; font-size: 1px; position: absolute; top: -1px;">Please enter a valid User Email.</p>
+      </div>
         <ion-label stacked ></ion-label>
         <p align="center">
-        <input [(ngModel)]="loginData.password" name="password" type="password" align="center" placeholder="Password"/>
-        <ion-item *ngIf="!userform.controls.password.valid  && (userform.controls.password.dirty || submitAttempt)">
-            <p>Please enter a valid Password.</p>
-        </ion-item> 
-      </p>
+        <input formControlName="password" name="password" type="password" align="center" placeholder="Password" required/>
+        <div *ngIf="!userform.controls.password.valid  && (userform.controls.password.dirty || submitAttempt)">
+            <p style="color: red; font-size: 1px;position: absolute; top: 10px;">Please enter a valid Password.</p>
+        </div>
 
      <button class="signin-button"  (click)="doLogin()">SIGN IN </button>
      <div class="rememberme-container">
@@ -47,6 +46,7 @@
         <label for="rememberme">keep me logged in?</label>
         
         <a class="forgot-password" href="#">Forgot Password?</a>
+      </div>
       </div>
     </form>
     </div>
@@ -65,6 +65,7 @@
         <p class="fix3text"> Iphone 8 Black </p>
         <p class="fix3text3">AED 3000</p>
     </div>
+
     </ion-content>
    
         
