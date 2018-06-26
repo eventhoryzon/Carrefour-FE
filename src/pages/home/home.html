@@ -5,7 +5,7 @@
   <!-- <ion-icon side="right" name="cart" color="energy"></ion-icon>   -->
      <ion-searchbar *ngIf="isOn" [(ngModel)]="searchTerm"  [formControl]="searchControl"></ion-searchbar>
    <ion-buttons end>
-     <button  (click)="toggleDetails()" style="width: 50px;height: 40px;border-radius: 4px;background-color: #f0f7fe"><ion-icon name="search" style=" color: #05539f" ></ion-icon></button>
+     <button  (click)="toggleDetails()" style="width: 80px;height: 80px;border-radius: 7px;background-color: #f0f7fe"><ion-icon name="search" style=" color: #05539f; zoom:3.0;" ></ion-icon></button>
    </ion-buttons>
    <div *ngIf="searching" class="spinner-container">
      <ion-spinner></ion-spinner>
