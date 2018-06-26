@@ -5,8 +5,6 @@
 [![Open Source Helpers](https://www.codetriage.com/ionic-team/ionic/badges/users.svg)](https://www.codetriage.com/ionic-team/ionic)
 
 
-UI-UX - Frontend Development
-
 Carrefour-FE-Assignment
 
 UI-UX - Frontend Development
